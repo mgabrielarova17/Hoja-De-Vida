@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {
   View,
@@ -7,6 +8,7 @@ import {
   ImageBackground,
 } from 'react-native';
 
+import { Ionicons } from '@expo/vector-icons';
 import TarjetaExperiencia from '../components/TarjetaExperiencia';
 
 export default function Experiencia() {
@@ -41,6 +43,12 @@ export default function Experiencia() {
 
         {/* INTRODUCCIÓN */}
         <View style={styles.introduccion}>
+          <Ionicons
+            name="rocket-outline"
+            size={30}
+            color="#7027A0"
+          />
+
           <Text style={styles.introTitulo}>
             Mi camino de aprendizaje 🌟
           </Text>
@@ -55,8 +63,69 @@ export default function Experiencia() {
           </Text>
         </View>
 
-        {/* TARJETAS DE EXPERIENCIA */}
+        {/* RESUMEN */}
+        <View style={styles.resumen}>
+          <Text style={styles.resumenTitulo}>
+            Mi recorrido profesional
+          </Text>
+
+          <View style={styles.estadisticas}>
+            <View style={styles.estadistica}>
+              <Ionicons
+                name="laptop-outline"
+                size={27}
+                color="#E9D5FF"
+              />
+              <Text style={styles.numero}>02</Text>
+              <Text style={styles.etiqueta}>
+                Tipos de proyectos
+              </Text>
+            </View>
+
+            <View style={styles.separador} />
+
+            <View style={styles.estadistica}>
+              <Ionicons
+                name="school-outline"
+                size={27}
+                color="#E9D5FF"
+              />
+              <Text style={styles.numero}>01</Text>
+              <Text style={styles.etiqueta}>
+                Formación actual
+              </Text>
+            </View>
+
+            <View style={styles.separador} />
+
+            <View style={styles.estadistica}>
+              <Ionicons
+                name="star-outline"
+                size={27}
+                color="#E9D5FF"
+              />
+              <Text style={styles.numero}>∞</Text>
+              <Text style={styles.etiqueta}>
+                Oportunidades
+              </Text>
+            </View>
+          </View>
+        </View>
+
+        {/* EXPERIENCIAS */}
         <View style={styles.contenido}>
+          <View style={styles.tituloSeccion}>
+            <Ionicons
+              name="briefcase-outline"
+              size={23}
+              color="#E9D5FF"
+            />
+
+            <Text style={styles.tituloTarjetas}>
+              Mis experiencias
+            </Text>
+          </View>
+
           <TarjetaExperiencia
             cargo="Desarrolladora en formación"
             empresa="Proyecto académico SENA"
@@ -77,6 +146,78 @@ export default function Experiencia() {
             periodo="En formación"
             descripcion="Interesada en adquirir experiencia profesional, aprender de nuevos entornos laborales y aportar mis conocimientos. Mi objetivo es continuar creciendo y asumir nuevos retos."
           />
+        </View>
+
+        {/* HABILIDADES */}
+        <View style={styles.habilidades}>
+          <Text style={styles.habilidadesTitulo}>
+            Habilidades en desarrollo 💻
+          </Text>
+
+          <View style={styles.habilidad}>
+            <Ionicons
+              name="code-slash-outline"
+              size={21}
+              color="#E9D5FF"
+            />
+            <Text style={styles.habilidadTexto}>
+              Programación y desarrollo de software
+            </Text>
+          </View>
+
+          <View style={styles.habilidad}>
+            <Ionicons
+              name="color-palette-outline"
+              size={21}
+              color="#E9D5FF"
+            />
+            <Text style={styles.habilidadTexto}>
+              Diseño de interfaces y creatividad
+            </Text>
+          </View>
+
+          <View style={styles.habilidad}>
+            <Ionicons
+              name="people-outline"
+              size={21}
+              color="#E9D5FF"
+            />
+            <Text style={styles.habilidadTexto}>
+              Trabajo en equipo y comunicación
+            </Text>
+          </View>
+
+          <View style={styles.habilidad}>
+            <Ionicons
+              name="bulb-outline"
+              size={21}
+              color="#E9D5FF"
+            />
+            <Text style={styles.habilidadTexto}>
+              Aprendizaje continuo y solución de problemas
+            </Text>
+          </View>
+        </View>
+
+        {/* OBJETIVO */}
+        <View style={styles.objetivo}>
+          <Ionicons
+            name="trophy-outline"
+            size={32}
+            color="#E9D5FF"
+          />
+
+          <Text style={styles.objetivoTitulo}>
+            Mis metas profesionales
+          </Text>
+
+          <Text style={styles.objetivoTexto}>
+            Quiero continuar aprendiendo, adquirir experiencia
+            en el mundo laboral y participar en proyectos
+            tecnológicos que me permitan demostrar mis
+            capacidades, superar nuevos retos y crecer
+            como profesional.
+          </Text>
         </View>
 
         {/* FRASE FINAL */}
@@ -158,14 +299,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255,255,255,0.94)',
     marginHorizontal: 18,
     marginTop: 20,
-    padding: 18,
-    borderRadius: 18,
+    padding: 20,
+    borderRadius: 20,
   },
 
   introTitulo: {
     color: '#7027A0',
     fontSize: 18,
     fontWeight: 'bold',
+    marginTop: 10,
     marginBottom: 8,
   },
 
@@ -176,14 +318,137 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
   },
 
+  resumen: {
+    backgroundColor: 'rgba(65, 20, 110, 0.88)',
+    marginHorizontal: 18,
+    marginTop: 20,
+    padding: 20,
+    borderRadius: 22,
+    borderWidth: 1,
+    borderColor: 'rgba(216, 180, 254, 0.35)',
+  },
+
+  resumenTitulo: {
+    color: '#FFFFFF',
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+
+  estadisticas: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+  },
+
+  estadistica: {
+    flex: 1,
+    alignItems: 'center',
+  },
+
+  numero: {
+    color: '#FFFFFF',
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginTop: 7,
+  },
+
+  etiqueta: {
+    color: '#E9D5FF',
+    fontSize: 11,
+    textAlign: 'center',
+    marginTop: 5,
+  },
+
+  separador: {
+    width: 1,
+    height: 65,
+    backgroundColor: 'rgba(233, 213, 255, 0.4)',
+  },
+
   contenido: {
     padding: 18,
+    paddingTop: 25,
+  },
+
+  tituloSeccion: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 18,
+    gap: 9,
+  },
+
+  tituloTarjetas: {
+    color: '#FFFFFF',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+
+  habilidades: {
+    backgroundColor: 'rgba(65, 20, 110, 0.88)',
+    marginHorizontal: 18,
+    marginTop: 5,
+    padding: 20,
+    borderRadius: 22,
+    borderWidth: 1,
+    borderColor: 'rgba(216, 180, 254, 0.35)',
+  },
+
+  habilidadesTitulo: {
+    color: '#FFFFFF',
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 18,
+    textAlign: 'center',
+  },
+
+  habilidad: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 15,
+    gap: 12,
+  },
+
+  habilidadTexto: {
+    color: '#E9D5FF',
+    fontSize: 13,
+    flex: 1,
+    lineHeight: 19,
+  },
+
+  objetivo: {
+    backgroundColor: 'rgba(65, 20, 110, 0.88)',
+    marginHorizontal: 18,
+    marginTop: 20,
+    padding: 22,
+    borderRadius: 22,
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: 'rgba(216, 180, 254, 0.35)',
+  },
+
+  objetivoTitulo: {
+    color: '#FFFFFF',
+    fontSize: 17,
+    fontWeight: 'bold',
+    marginTop: 10,
+    textAlign: 'center',
+  },
+
+  objetivoTexto: {
+    color: '#E9D5FF',
+    fontSize: 13,
+    lineHeight: 21,
+    textAlign: 'center',
+    marginTop: 10,
   },
 
   pie: {
     backgroundColor: 'rgba(65, 20, 110, 0.85)',
     marginHorizontal: 18,
-    marginTop: 5,
+    marginTop: 20,
     padding: 20,
     borderRadius: 20,
     alignItems: 'center',
