@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {
   View,
@@ -7,6 +8,8 @@ import {
   ScrollView,
   ImageBackground,
 } from 'react-native';
+
+import { Ionicons } from '@expo/vector-icons';
 
 const pasatiempos = [
   {
@@ -66,13 +69,26 @@ export default function Hobbies() {
             Las cosas que alegran mis días y hacen especial mi mundo.
           </Text>
 
-          <Text style={styles.army}>
-            ARMY DE CORAZÓN
-          </Text>
+          <View style={styles.etiquetaArmy}>
+            <Ionicons
+              name="heart"
+              size={16}
+              color="#FFFFFF"
+            />
+            <Text style={styles.army}>
+              ARMY DE CORAZÓN
+            </Text>
+          </View>
         </View>
 
         {/* INTRODUCCIÓN */}
         <View style={styles.introduccion}>
+          <Ionicons
+            name="sparkles-outline"
+            size={30}
+            color="#7027A0"
+          />
+
           <Text style={styles.introTitulo}>
             Un poquito sobre mí ✨
           </Text>
@@ -85,17 +101,84 @@ export default function Hobbies() {
           </Text>
         </View>
 
+        {/* RESUMEN */}
+        <View style={styles.resumen}>
+          <Text style={styles.resumenTitulo}>
+            Mi mundo en cinco intereses
+          </Text>
+
+          <View style={styles.estadisticas}>
+            <View style={styles.estadistica}>
+              <Ionicons
+                name="heart-outline"
+                size={27}
+                color="#E9D5FF"
+              />
+              <Text style={styles.numero}>05</Text>
+              <Text style={styles.etiqueta}>
+                Pasatiempos
+              </Text>
+            </View>
+
+            <View style={styles.separador} />
+
+            <View style={styles.estadistica}>
+              <Ionicons
+                name="bulb-outline"
+                size={27}
+                color="#E9D5FF"
+              />
+              <Text style={styles.numero}>∞</Text>
+              <Text style={styles.etiqueta}>
+                Ideas nuevas
+              </Text>
+            </View>
+
+            <View style={styles.separador} />
+
+            <View style={styles.estadistica}>
+              <Ionicons
+                name="happy-outline"
+                size={27}
+                color="#E9D5FF"
+              />
+              <Text style={styles.numero}>100%</Text>
+              <Text style={styles.etiqueta}>
+                Personalidad
+              </Text>
+            </View>
+          </View>
+        </View>
+
         {/* TARJETAS DE PASATIEMPOS */}
         <View style={styles.contenido}>
+          <View style={styles.tituloSeccion}>
+            <Ionicons
+              name="heart"
+              size={23}
+              color="#E9D5FF"
+            />
+
+            <Text style={styles.tituloTarjetas}>
+              Las cosas que me gustan
+            </Text>
+          </View>
+
           {pasatiempos.map((item, index) => (
-            <View style={styles.tarjeta} key={index}>
-              <Image
-                source={item.imagen}
-                style={styles.imagen}
-                resizeMode="cover"
-              />
+            <View style={styles.tarjeta} key={item.titulo}>
+              <View style={styles.imagenContenedor}>
+                <Image
+                  source={item.imagen}
+                  style={styles.imagen}
+                  resizeMode="cover"
+                />
+              </View>
 
               <View style={styles.textos}>
+                <Text style={styles.numeroTarjeta}>
+                  INTERÉS {String(index + 1).padStart(2, '0')}
+                </Text>
+
                 <Text style={styles.nombre}>
                   {item.titulo}
                 </Text>
@@ -106,6 +189,27 @@ export default function Hobbies() {
               </View>
             </View>
           ))}
+        </View>
+
+        {/* REFLEXIÓN */}
+        <View style={styles.reflexion}>
+          <Ionicons
+            name="flower-outline"
+            size={32}
+            color="#E9D5FF"
+          />
+
+          <Text style={styles.reflexionTitulo}>
+            Lo que mis pasatiempos significan para mí
+          </Text>
+
+          <Text style={styles.reflexionTexto}>
+            Cada actividad me permite descubrir algo nuevo
+            de mí misma. Algunas me inspiran, otras me ayudan
+            a relajarme y otras despiertan mi creatividad.
+            Todas forman parte de lo que soy y de lo que
+            quiero seguir construyendo.
+          </Text>
         </View>
 
         {/* FRASE FINAL */}
@@ -178,25 +282,37 @@ const styles = StyleSheet.create({
     lineHeight: 20,
   },
 
+  etiquetaArmy: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgba(168, 85, 247, 0.45)',
+    paddingHorizontal: 15,
+    paddingVertical: 8,
+    borderRadius: 20,
+    marginTop: 15,
+    gap: 7,
+  },
+
   army: {
     color: '#FFFFFF',
     fontWeight: 'bold',
-    marginTop: 15,
     letterSpacing: 2,
+    fontSize: 12,
   },
 
   introduccion: {
     backgroundColor: 'rgba(255,255,255,0.94)',
     marginHorizontal: 18,
     marginTop: 20,
-    padding: 18,
-    borderRadius: 18,
+    padding: 20,
+    borderRadius: 20,
   },
 
   introTitulo: {
     color: '#7027A0',
     fontSize: 18,
     fontWeight: 'bold',
+    marginTop: 10,
     marginBottom: 8,
   },
 
@@ -207,9 +323,72 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
   },
 
+  resumen: {
+    backgroundColor: 'rgba(65, 20, 110, 0.88)',
+    marginHorizontal: 18,
+    marginTop: 20,
+    padding: 20,
+    borderRadius: 22,
+    borderWidth: 1,
+    borderColor: 'rgba(216, 180, 254, 0.35)',
+  },
+
+  resumenTitulo: {
+    color: '#FFFFFF',
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+
+  estadisticas: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+  },
+
+  estadistica: {
+    flex: 1,
+    alignItems: 'center',
+  },
+
+  numero: {
+    color: '#FFFFFF',
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginTop: 7,
+  },
+
+  etiqueta: {
+    color: '#E9D5FF',
+    fontSize: 11,
+    textAlign: 'center',
+    marginTop: 5,
+  },
+
+  separador: {
+    width: 1,
+    height: 65,
+    backgroundColor: 'rgba(233, 213, 255, 0.4)',
+  },
+
   contenido: {
     paddingHorizontal: 16,
-    paddingTop: 12,
+    paddingTop: 25,
+  },
+
+  tituloSeccion: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 12,
+    gap: 9,
+  },
+
+  tituloTarjetas: {
+    color: '#FFFFFF',
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 
   tarjeta: {
@@ -221,6 +400,14 @@ const styles = StyleSheet.create({
     marginVertical: 9,
     minHeight: 145,
     elevation: 5,
+    borderWidth: 1,
+    borderColor: 'rgba(216, 180, 254, 0.5)',
+  },
+
+  imagenContenedor: {
+    borderRadius: 15,
+    padding: 3,
+    backgroundColor: '#E9D5FF',
   },
 
   imagen: {
@@ -236,9 +423,17 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
   },
 
+  numeroTarjeta: {
+    color: '#A855F7',
+    fontSize: 10,
+    fontWeight: 'bold',
+    letterSpacing: 1,
+    marginBottom: 5,
+  },
+
   nombre: {
     color: '#7027A0',
-    fontSize: 17,
+    fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 8,
   },
@@ -248,6 +443,33 @@ const styles = StyleSheet.create({
     fontSize: 13,
     lineHeight: 19,
     textAlign: 'left',
+  },
+
+  reflexion: {
+    backgroundColor: 'rgba(65, 20, 110, 0.88)',
+    marginHorizontal: 18,
+    marginTop: 15,
+    padding: 22,
+    borderRadius: 22,
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: 'rgba(216, 180, 254, 0.35)',
+  },
+
+  reflexionTitulo: {
+    color: '#FFFFFF',
+    fontSize: 17,
+    fontWeight: 'bold',
+    marginTop: 10,
+    textAlign: 'center',
+  },
+
+  reflexionTexto: {
+    color: '#E9D5FF',
+    fontSize: 13,
+    lineHeight: 21,
+    textAlign: 'center',
+    marginTop: 10,
   },
 
   frase: {
