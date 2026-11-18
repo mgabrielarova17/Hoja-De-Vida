@@ -299,6 +299,94 @@ export default function Inicio() {
             </TarjetaAnimada>
           </View>
 
+          {/* MIS FORTALEZAS */}
+          <View style={styles.seccion}>
+            <Text style={styles.tituloSeccion}>
+              🌟 Mis fortalezas
+            </Text>
+
+            <Text style={styles.introFortalezas}>
+              Cualidades que me ayudan a crecer personal y
+              profesionalmente cada día.
+            </Text>
+
+            <View style={styles.contenedorFortalezas}>
+
+              <View style={styles.tarjetaFortaleza}>
+                <View style={styles.iconoFortaleza}>
+                  <Ionicons
+                    name="bulb"
+                    size={27}
+                    color="#FFFFFF"
+                  />
+                </View>
+
+                <Text style={styles.nombreFortaleza}>
+                  Creatividad
+                </Text>
+
+                <Text style={styles.detalleFortaleza}>
+                  Me gusta aportar ideas y encontrar soluciones.
+                </Text>
+              </View>
+
+              <View style={styles.tarjetaFortaleza}>
+                <View style={styles.iconoFortaleza}>
+                  <Ionicons
+                    name="people"
+                    size={27}
+                    color="#FFFFFF"
+                  />
+                </View>
+
+                <Text style={styles.nombreFortaleza}>
+                  Trabajo en equipo
+                </Text>
+
+                <Text style={styles.detalleFortaleza}>
+                  Disfruto colaborar y aprender de los demás.
+                </Text>
+              </View>
+
+              <View style={styles.tarjetaFortaleza}>
+                <View style={styles.iconoFortaleza}>
+                  <Ionicons
+                    name="code-slash"
+                    size={27}
+                    color="#FFFFFF"
+                  />
+                </View>
+
+                <Text style={styles.nombreFortaleza}>
+                  Tecnología
+                </Text>
+
+                <Text style={styles.detalleFortaleza}>
+                  Me interesa aprender nuevas herramientas.
+                </Text>
+              </View>
+
+              <View style={styles.tarjetaFortaleza}>
+                <View style={styles.iconoFortaleza}>
+                  <Ionicons
+                    name="trophy"
+                    size={27}
+                    color="#FFFFFF"
+                  />
+                </View>
+
+                <Text style={styles.nombreFortaleza}>
+                  Compromiso
+                </Text>
+
+                <Text style={styles.detalleFortaleza}>
+                  Trabajo con dedicación para cumplir mis metas.
+                </Text>
+              </View>
+
+            </View>
+          </View>
+
           {/* CONTACTO */}
           <View style={styles.seccion}>
             <Text style={styles.tituloSeccion}>
@@ -594,6 +682,61 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 18,
     marginTop: 8,
+  },
+
+  // MIS FORTALEZAS
+  introFortalezas: {
+    color: '#E9D5FF',
+    fontSize: 14,
+    lineHeight: 22,
+    marginBottom: 15,
+  },
+
+  contenedorFortalezas: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    rowGap: 12,
+  },
+
+  tarjetaFortaleza: {
+    width: '48%',
+    backgroundColor: 'rgba(255,255,255,0.97)',
+    padding: 15,
+    borderRadius: 20,
+    alignItems: 'center',
+    borderWidth: 1.5,
+    borderColor: '#C084FC',
+    elevation: 5,
+    shadowColor: '#9333EA',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+  },
+
+  iconoFortaleza: {
+    width: 55,
+    height: 55,
+    borderRadius: 18,
+    backgroundColor: '#9333EA',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+
+  nombreFortaleza: {
+    color: '#581C87',
+    fontSize: 14,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 8,
+  },
+
+  detalleFortaleza: {
+    color: '#51445C',
+    fontSize: 12,
+    lineHeight: 18,
+    textAlign: 'center',
   },
 
   // FRASE FINAL
