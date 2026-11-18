@@ -1,3 +1,4 @@
+
 import React, { useRef, useState } from 'react';
 
 import {
@@ -32,6 +33,7 @@ export default function MiBoton({
   const [modalVisible, setModalVisible] = useState(false);
   const escala = useRef(new Animated.Value(1)).current;
 
+  // ANIMACIÓN DEL BOTÓN
   const animar = (valor: number) => {
     Animated.spring(escala, {
       toValue: valor,
@@ -41,7 +43,26 @@ export default function MiBoton({
     }).start();
   };
 
+  // MENSAJE DE ERROR
+  const mostrarError = () => {
+    if (Platform.OS === 'web') {
+      window.alert('No encontramos una aplicación disponible.');
+    } else {
+      Alert.alert(
+        'No se pudo abrir',
+        'No encontramos una aplicación disponible.'
+      );
+    }
+  };
+
+  // ABRIR CORREO, TELÉFONO O PÁGINA WEB
   const abrirEnlace = async () => {
+
+    if (!destino.trim()) {
+      mostrarError();
+      return;
+    }
+
     if (tipo === 'telefono') {
       setModalVisible(true);
       return;
@@ -64,13 +85,11 @@ export default function MiBoton({
     try {
       await Linking.openURL(url);
     } catch (error) {
-      Alert.alert(
-        'No se pudo abrir',
-        'No encontramos una aplicación disponible.'
-      );
+      mostrarError();
     }
   };
 
+  // COPIAR NÚMERO
   const copiarNumero = async () => {
     try {
       await Clipboard.setStringAsync(destino);
@@ -84,7 +103,10 @@ export default function MiBoton({
         );
       }
     } catch (error) {
-      Alert.alert('Error', 'No se pudo copiar el número.');
+      Alert.alert(
+        'Error',
+        'No se pudo copiar el número.'
+      );
     }
   };
 
@@ -98,10 +120,13 @@ export default function MiBoton({
       >
         <TouchableOpacity
           style={styles.boton}
-          activeOpacity={0.9}
+          activeOpacity={0.85}
           onPress={abrirEnlace}
           onPressIn={() => animar(0.95)}
           onPressOut={() => animar(1)}
+          accessibilityRole="button"
+          accessibilityLabel={titulo}
+          accessibilityHint={`Abre la opción de ${titulo}`}
         >
           <Ionicons
             name={icono}
@@ -115,7 +140,7 @@ export default function MiBoton({
 
           <Ionicons
             name="arrow-forward-circle"
-            size={20}
+            size={21}
             color="#E9D5FF"
           />
         </TouchableOpacity>
@@ -131,9 +156,12 @@ export default function MiBoton({
         <View style={styles.fondoModal}>
           <View style={styles.ventana}>
 
+            {/* BOTÓN CERRAR */}
             <TouchableOpacity
               style={styles.cerrar}
               onPress={() => setModalVisible(false)}
+              accessibilityRole="button"
+              accessibilityLabel="Cerrar ventana"
             >
               <Ionicons
                 name="close-circle"
@@ -142,12 +170,14 @@ export default function MiBoton({
               />
             </TouchableOpacity>
 
+            {/* DECORACIÓN */}
             <View style={styles.decoracion}>
               <Text style={styles.estrellas}>
                 ✨ ⭐ 💜 ⭐ ✨
               </Text>
             </View>
 
+            {/* ICONO */}
             <View style={styles.iconoTelefono}>
               <Ionicons
                 name="call"
@@ -156,6 +186,7 @@ export default function MiBoton({
               />
             </View>
 
+            {/* TÍTULO */}
             <Text style={styles.tituloModal}>
               ¡Contáctame! 💜
             </Text>
@@ -164,6 +195,7 @@ export default function MiBoton({
               Puedes comunicarte conmigo al:
             </Text>
 
+            {/* NÚMERO */}
             <View style={styles.numeroContenedor}>
               <Ionicons
                 name="phone-portrait"
@@ -179,10 +211,13 @@ export default function MiBoton({
               </Text>
             </View>
 
+            {/* COPIAR */}
             <TouchableOpacity
               style={styles.botonCopiar}
               activeOpacity={0.8}
               onPress={copiarNumero}
+              accessibilityRole="button"
+              accessibilityLabel="Copiar número de teléfono"
             >
               <Ionicons
                 name="copy-outline"
@@ -195,6 +230,7 @@ export default function MiBoton({
               </Text>
             </TouchableOpacity>
 
+            {/* MENSAJE FINAL */}
             <Text style={styles.mensajeFinal}>
               ✨ ¡Será un gusto atenderte! ✨
             </Text>
