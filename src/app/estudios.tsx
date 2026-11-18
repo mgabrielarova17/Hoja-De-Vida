@@ -7,6 +7,7 @@ import {
   ImageBackground,
 } from 'react-native';
 
+import { Ionicons } from '@expo/vector-icons';
 import TarjetaEstudio from '../components/TarjetaEstudio';
 
 export default function Estudios() {
@@ -26,9 +27,7 @@ export default function Estudios() {
         <View style={styles.encabezado}>
           <Text style={styles.corazon}>💜 ✨</Text>
 
-          <Text style={styles.titulo}>
-            Mi formación
-          </Text>
+          <Text style={styles.titulo}>Mi formación</Text>
 
           <Text style={styles.subtitulo}>
             Cada aprendizaje me acerca a mis sueños.
@@ -39,8 +38,60 @@ export default function Estudios() {
           </Text>
         </View>
 
+        {/* RESUMEN */}
+        <View style={styles.resumen}>
+          <Ionicons
+            name="school-outline"
+            size={30}
+            color="#E9D5FF"
+          />
+
+          <Text style={styles.resumenTitulo}>
+            Mi camino de aprendizaje
+          </Text>
+
+          <Text style={styles.resumenTexto}>
+            Cada etapa de mi formación representa una oportunidad
+            para crecer, descubrir mis capacidades y prepararme
+            para alcanzar mis metas.
+          </Text>
+
+          <View style={styles.estadisticas}>
+            <View style={styles.estadistica}>
+              <Text style={styles.numero}>03</Text>
+              <Text style={styles.etiqueta}>Etapas</Text>
+            </View>
+
+            <View style={styles.separador} />
+
+            <View style={styles.estadistica}>
+              <Text style={styles.numero}>01</Text>
+              <Text style={styles.etiqueta}>En curso</Text>
+            </View>
+
+            <View style={styles.separador} />
+
+            <View style={styles.estadistica}>
+              <Text style={styles.numero}>∞</Text>
+              <Text style={styles.etiqueta}>Sueños</Text>
+            </View>
+          </View>
+        </View>
+
         {/* CONTENIDO */}
         <View style={styles.contenido}>
+          <View style={styles.tituloSeccion}>
+            <Ionicons
+              name="book-outline"
+              size={23}
+              color="#E9D5FF"
+            />
+
+            <Text style={styles.tituloTarjetas}>
+              Mi recorrido académico
+            </Text>
+          </View>
+
           <TarjetaEstudio
             titulo="Análisis y Desarrollo de Software"
             institucion="SENA"
@@ -64,6 +115,26 @@ export default function Estudios() {
             descripcion="Aprendizaje autónomo sobre tecnología, creatividad y nuevas herramientas digitales. Me gusta investigar y descubrir nuevas formas de aprender."
             enCurso={false}
           />
+        </View>
+
+        {/* OBJETIVO PERSONAL */}
+        <View style={styles.objetivo}>
+          <Ionicons
+            name="rocket-outline"
+            size={30}
+            color="#E9D5FF"
+          />
+
+          <Text style={styles.objetivoTitulo}>
+            Mi próximo gran objetivo
+          </Text>
+
+          <Text style={styles.objetivoTexto}>
+            Seguir fortaleciendo mis conocimientos en tecnología,
+            desarrollar proyectos creativos y convertirme en una
+            profesional capaz de crear soluciones que aporten
+            algo positivo al mundo.
+          </Text>
         </View>
 
         {/* FRASE FINAL */}
@@ -141,8 +212,108 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
   },
 
+  resumen: {
+    backgroundColor: 'rgba(65, 20, 110, 0.88)',
+    marginHorizontal: 18,
+    marginTop: 22,
+    padding: 20,
+    borderRadius: 22,
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: 'rgba(216, 180, 254, 0.35)',
+  },
+
+  resumenTitulo: {
+    color: '#FFFFFF',
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginTop: 10,
+  },
+
+  resumenTexto: {
+    color: '#E9D5FF',
+    fontSize: 13,
+    lineHeight: 21,
+    textAlign: 'center',
+    marginTop: 10,
+  },
+
+  estadisticas: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    width: '100%',
+    marginTop: 22,
+  },
+
+  estadistica: {
+    alignItems: 'center',
+    flex: 1,
+  },
+
+  numero: {
+    color: '#FFFFFF',
+    fontSize: 25,
+    fontWeight: 'bold',
+  },
+
+  etiqueta: {
+    color: '#E9D5FF',
+    fontSize: 12,
+    marginTop: 4,
+  },
+
+  separador: {
+    width: 1,
+    height: 35,
+    backgroundColor: 'rgba(233, 213, 255, 0.4)',
+  },
+
   contenido: {
     padding: 18,
+    paddingTop: 25,
+  },
+
+  tituloSeccion: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 18,
+    gap: 9,
+  },
+
+  tituloTarjetas: {
+    color: '#FFFFFF',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+
+  objetivo: {
+    backgroundColor: 'rgba(65, 20, 110, 0.88)',
+    marginHorizontal: 18,
+    marginTop: 5,
+    marginBottom: 20,
+    padding: 22,
+    borderRadius: 22,
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: 'rgba(216, 180, 254, 0.35)',
+  },
+
+  objetivoTitulo: {
+    color: '#FFFFFF',
+    fontSize: 17,
+    fontWeight: 'bold',
+    marginTop: 10,
+    textAlign: 'center',
+  },
+
+  objetivoTexto: {
+    color: '#E9D5FF',
+    fontSize: 13,
+    lineHeight: 21,
+    textAlign: 'center',
+    marginTop: 10,
   },
 
   pie: {
