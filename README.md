@@ -1,56 +1,229 @@
-# Welcome to your Expo app 👋
+# 💜 BTS Purple Profile
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<p align="center">
+  <img src="assets/bts/bts-portada.jpg" width="700" alt="BTS Purple Profile - Portada"/>
+</p>
 
-## Get started
+<h1 align="center">💜 BTS Purple Profile 💜</h1>
 
-1. Install dependencies
+<p align="center">
+  Una aplicación móvil creada con creatividad, tecnología y mucho amor por BTS y ARMY.
+</p>
 
-   ```bash
-   npm install
-   ```
+<p align="center">
+  ✨ Construyendo mis sueños, un proyecto a la vez ✨
+</p>
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## 📱 Descripción del proyecto
 
-In the output, you'll find options to open the app in a
+**BTS Purple Profile** es una aplicación móvil desarrollada utilizando React Native y Expo, diseñada para presentar de manera creativa, moderna e interactiva la información personal, académica y profesional de su autora.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+El proyecto combina el desarrollo de software con un diseño visual inspirado en BTS y su comunidad ARMY, utilizando una temática de colores morados, elementos galácticos, imágenes, animaciones y componentes personalizados.
 
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+La aplicación busca ofrecer una experiencia visual agradable, organizada y sencilla, permitiendo que los usuarios conozcan diferentes aspectos de la autora a través de sus distintas secciones.
 
-## Get a fresh project
+Además, representa una oportunidad para poner en práctica los conocimientos adquiridos durante el proceso de formación en Análisis y Desarrollo de Software.
 
-When you're ready, run:
+## 🎯 Objetivo general
 
-```bash
-npm run reset-project
+Desarrollar una aplicación móvil interactiva que permita presentar información personal, académica, experiencia y gustos personales mediante una interfaz atractiva, organizada y adaptable, aplicando herramientas y tecnologías modernas de desarrollo de aplicaciones móviles.
+
+## ✨ Características principales
+
+La aplicación cuenta con diferentes secciones y funcionalidades:
+
+### 🏠 1. Inicio
+- Presentación personal de la autora.
+- Fotografía de perfil.
+- Descripción personal.
+- Información general.
+- Diseño personalizado inspirado en BTS.
+- Fondo galáctico y elementos decorativos animados.
+- Efectos visuales en diferentes componentes.
+
+### 🎓 2. Estudios
+- Presentación de la formación académica.
+- Información relacionada con el proceso educativo.
+- Organización visual mediante tarjetas.
+- Diseño coherente con la temática de la aplicación.
+
+### 💼 3. Experiencia
+- Sección destinada a presentar información sobre la experiencia personal y profesional.
+- Organización del contenido de manera clara.
+- Componentes visuales personalizados.
+
+### 🎨 4. Hobbies
+- Presentación de los principales gustos e intereses personales.
+- Fotografías relacionadas con diferentes actividades.
+- Secciones dedicadas a BTS, música, dibujo, doramas y tecnología.
+- Diseño visual atractivo y organizado.
+
+### 📩 5. Contacto
+- Acceso al correo electrónico mediante Gmail.
+- Acceso al perfil de GitHub.
+- Visualización del número telefónico.
+- Opción para copiar el número de contacto.
+- Botones interactivos con efectos de animación.
+
+## 🛠️ Tecnologías utilizadas
+
+Para el desarrollo de este proyecto se utilizaron las siguientes tecnologías y herramientas:
+
+| Tecnología | Descripción |
+|---|---|
+| React Native | Desarrollo de la interfaz móvil. |
+| Expo | Herramienta para facilitar el desarrollo y ejecución de la aplicación. |
+| TypeScript | Lenguaje utilizado para escribir código con tipado estático. |
+| Expo Router | Navegación y organización de las pantallas. |
+| JavaScript | Lógica y funcionamiento de los componentes. |
+| Git | Control de versiones del proyecto. |
+| GitHub | Almacenamiento y publicación del código fuente. |
+
+## 📂 Estructura del proyecto
+
+La organización general del proyecto es la siguiente:
+
+```text
+BTS-Purple-Profile/
+│
+├── assets/
+│   ├── bts/
+│   │   ├── bts-portada.jpg
+│   │   └── fondo-galaxia.jpg
+│   │
+│   ├── hobbies/
+│   │   ├── bts.jpg
+│   │   ├── dibujo.jpg
+│   │   ├── doramas.jpg
+│   │   ├── musica.jpg
+│   │   └── tecnologia.jpg
+│   │
+│   └── perfil.png
+│
+├── src/
+│   ├── app/
+│   │   ├── _layout.tsx
+│   │   ├── index.tsx
+│   │   ├── estudios.tsx
+│   │   ├── experiencia.tsx
+│   │   ├── hobbies.tsx
+│   │   └── explore.tsx
+│   │
+│   └── components/
+│       ├── MiBoton.tsx
+│       ├── TarjetaEstudio.tsx
+│       ├── TarjetaExperiencia.tsx
+│       └── TarjetaHobby.tsx
+│
+├── app.json
+├── package.json
+├── package-lock.json
+└── README.md
 ```
 
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
+## 🚀 Instalación y ejecución
 
-### Other setup steps
+Si deseas descargar y ejecutar este proyecto en tu equipo, sigue estos pasos:
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+**1. Clonar el repositorio**
 
-## Learn more
+```bash
+git clone https://github.com/mgabrielarova17/Hoja-De-Vida.git
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+**2. Ingresar a la carpeta del proyecto**
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+cd BTS-Purple-Profile
+```
 
-## Join the community
+**3. Instalar las dependencias**
 
-Join our community of developers creating universal apps.
+```bash
+npm install
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+**4. Iniciar el proyecto**
+
+```bash
+npx expo start
+```
+
+**5. Ejecutar la aplicación**
+
+- Escanea el código QR con Expo Go desde tu dispositivo móvil.
+- Presiona `w` para abrir la versión web, si está configurada.
+- Presiona `a` para utilizar un emulador de Android compatible.
+
+## 💜 Diseño y experiencia de usuario
+
+La identidad visual de BTS Purple Profile está inspirada en el universo de BTS y ARMY.
+
+Se utilizan principalmente:
+
+- Tonalidades moradas y violetas.
+- Fondos galácticos.
+- Fotografías e imágenes personalizadas.
+- Tarjetas con bordes redondeados.
+- Iconos representativos.
+- Animaciones y efectos interactivos.
+- Navegación mediante pestañas.
+
+Cada pantalla mantiene una identidad visual consistente para ofrecer una experiencia agradable y fácil de utilizar.
+
+## 📚 Aprendizajes y conocimientos aplicados
+
+Durante el desarrollo de esta aplicación se pusieron en práctica diferentes conocimientos relacionados con el desarrollo de software:
+
+- Creación y organización de proyectos con Expo.
+- Desarrollo de interfaces con React Native.
+- Uso de componentes reutilizables.
+- Navegación entre pantallas.
+- Implementación de imágenes y recursos multimedia.
+- Aplicación de estilos personalizados.
+- Uso de animaciones.
+- Implementación de botones interactivos.
+- Integración de enlaces externos.
+- Gestión de dependencias.
+- Control de versiones mediante Git y GitHub.
+
+## 🔮 Posibles mejoras futuras
+
+El proyecto puede continuar evolucionando mediante la incorporación de nuevas funcionalidades, entre ellas:
+
+- Nuevas secciones de información personal.
+- Galería multimedia.
+- Mejoras en las animaciones.
+- Nuevas opciones de personalización.
+- Adaptación de la interfaz a diferentes dispositivos.
+- Incorporación de nuevas funcionalidades interactivas.
+
+## 👩‍💻 Autora
+
+**Mariana Gabriela Contreras Romero**
+
+Aprendiz de Análisis y Desarrollo de Software.
+
+Este proyecto representa una parte de mi proceso de aprendizaje, creatividad y crecimiento en el mundo del desarrollo de aplicaciones.
+
+- GitHub: [@mgabrielarova17](https://github.com/mgabrielarova17)
+
+## 💜 Agradecimientos
+
+A BTS por ser una fuente de inspiración, creatividad y motivación.
+
+A ARMY por representar una comunidad llena de apoyo, unión y cariño.
+
+Y, especialmente, a todas las personas que hacen parte de mi proceso de aprendizaje y me motivan a seguir construyendo mis sueños.
+
+---
+
+<p align="center">
+  💜 BOR A HAE 💜
+</p>
+
+<p align="center">
+  Hecho con dedicación, creatividad y mucho amor. ✨
+</p>
