@@ -1,3 +1,4 @@
+
 import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -7,20 +8,29 @@ export default function TabLayout() {
       screenOptions={{
         headerShown: false,
 
-        tabBarActiveTintColor: '#A855F7',
-        tabBarInactiveTintColor: '#A1A1AA',
+        tabBarActiveTintColor: '#FFFFFF',
+        tabBarInactiveTintColor: '#C4B5FD',
 
         tabBarStyle: {
-          backgroundColor: '#FFFFFF',
-          borderTopColor: '#E9D5FF',
-          height: 65,
-          paddingBottom: 8,
-          paddingTop: 8,
+          backgroundColor: '#321052',
+          borderTopColor: '#7E22CE',
+          borderTopWidth: 1,
+          height: 72,
+          paddingBottom: 9,
+          paddingTop: 9,
+          elevation: 12,
         },
 
         tabBarLabelStyle: {
           fontSize: 11,
-          fontWeight: '600',
+          fontWeight: 'bold',
+          marginTop: 3,
+        },
+
+        tabBarItemStyle: {
+          borderRadius: 14,
+          marginHorizontal: 3,
+          marginVertical: 3,
         },
       }}
     >
@@ -29,10 +39,10 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Inicio',
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color, size, focused }) => (
             <Ionicons
-              name="home"
-              color={String(color ?? '#A855F7')}
+              name={focused ? 'home' : 'home-outline'}
+              color={String(color ?? '#C4B5FD')}
               size={size}
             />
           ),
@@ -44,10 +54,10 @@ export default function TabLayout() {
         name="estudios"
         options={{
           title: 'Estudios',
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color, size, focused }) => (
             <Ionicons
-              name="school"
-              color={String(color ?? '#A855F7')}
+              name={focused ? 'school' : 'school-outline'}
+              color={String(color ?? '#C4B5FD')}
               size={size}
             />
           ),
@@ -59,10 +69,10 @@ export default function TabLayout() {
         name="experiencia"
         options={{
           title: 'Experiencia',
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color, size, focused }) => (
             <Ionicons
-              name="briefcase"
-              color={String(color ?? '#A855F7')}
+              name={focused ? 'briefcase' : 'briefcase-outline'}
+              color={String(color ?? '#C4B5FD')}
               size={size}
             />
           ),
@@ -74,10 +84,10 @@ export default function TabLayout() {
         name="hobbies"
         options={{
           title: 'Hobbies',
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color, size, focused }) => (
             <Ionicons
-              name="heart"
-              color={String(color ?? '#A855F7')}
+              name={focused ? 'heart' : 'heart-outline'}
+              color={String(color ?? '#C4B5FD')}
               size={size}
             />
           ),
